@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "8651b398-63a1-44f9-99e3-be10d0140a45",
+		"name": "ContactsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10050277"
+	},
+	"item": [
+		{
+			"name": "Get Contact List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2E5ZGY0MmNjODI1NzAwMTM5MTU5NjIiLCJpYXQiOjE3MzkxODY0NTN9.B3xf_tXpvy-Oz3UqYClipZaPNYdNsiVtd5lcgBIhpow",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://thinking-tester-contact-list.herokuapp.com/contacts",
+					"protocol": "https",
+					"host": [
+						"thinking-tester-contact-list",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A User By Using ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2E5ZGY0MmNjODI1NzAwMTM5MTU5NjIiLCJpYXQiOjE3MzkxODY0NTN9.B3xf_tXpvy-Oz3UqYClipZaPNYdNsiVtd5lcgBIhpow",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://thinking-tester-contact-list.herokuapp.com/contacts/67a9e12ecc82570013915968",
+					"protocol": "https",
+					"host": [
+						"thinking-tester-contact-list",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"contacts",
+						"67a9e12ecc82570013915968"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

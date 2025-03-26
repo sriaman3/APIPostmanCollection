@@ -33,7 +33,12 @@ pipeline {
 
         stage('Prepare Newman Results Directory') {
             steps {
-                bat 'mkdir "%cd%\\newman"'
+                bat '''
+                    if exist 'mkdir "%cd%\\newman"' (
+                    rmdir /s /q 'mkdir "%cd%\\newman"'
+                    )
+                    mkdir "%cd%\\newman"
+                    '''
             }
         }
 

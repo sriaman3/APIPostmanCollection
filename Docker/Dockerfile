@@ -23,4 +23,4 @@ COPY BookingsAPIENV.json .
 COPY BookingENV.json .
 
 # Set the command to run Newman and execute your Postman collection
-CMD ["newman", "run", "BookingsAPIENV.json", "-e", "BookingENV.json", "-r", "cli,json,html,htmlextra", "--reporter-htmlextra-export", "app/results/gorest.html"]
+CMD ["newman", "run", "BookingsAPIENV.json", "-e", "BookingENV.json", "-r", "cli,json,html,htmlextra", "--reporter-htmlextra-export", "app/results/gorest.html", "--verbose"]

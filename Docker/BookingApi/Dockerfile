@@ -19,8 +19,8 @@ RUN mkdir -p /app/results
 
 
 # Copy your Postman collection and environment files to the working directory
-COPY BookingsAPIENV.json .
-COPY BookingENV.json .
+COPY BookingsAPIENV.json /app/
+COPY BookingENV.json /app/
 
 # Set the command to run Newman and execute your Postman collection
 CMD ["newman", "run", "BookingsAPIENV.json", "-e", "BookingENV.json", "-r", "cli,json,html,htmlextra", "--reporter-htmlextra-export", "/app/results/booking.html", "--verbose"]

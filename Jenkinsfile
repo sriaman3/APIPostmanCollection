@@ -31,7 +31,7 @@ pipeline {
                             alwaysLinkToLastBuild: false,
                             keepAll: true,
                             reportDir: 'newman',
-                            reportFiles: 'booking.html',
+                            reportFiles: '*.html',
                             reportName: 'Booking API Report',
                             reportTitles: '',
                         ])

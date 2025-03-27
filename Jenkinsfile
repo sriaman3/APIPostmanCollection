@@ -14,21 +14,11 @@ pipeline {
             }
         }
 
-        
-
-        stage('Pull Docker Images') {
-                
-                    steps {
-                        bat 'docker pull test11031992/bookingapi:1.0'
-                    }
-            
-        }
-
 
         stage('Run API Test Cases in Parallel') {
               
                     steps {
-                        bat 'docker run --rm -v "%cd%\\newman:/app/results" test11031992/bookingapi:1.0'
+                        bat 'docker run -v ${PWD}/newman:/app/newman test11031992/bookingapi:1.0'
                     }
                 
         }

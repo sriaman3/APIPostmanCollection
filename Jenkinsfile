@@ -18,7 +18,7 @@ pipeline {
         stage('Run API Test Cases in Parallel') {
               
                     steps {
-                        bat 'docker run -v ${PWD}/newman:/app/newman test11031992/bookingapi:1.0'
+                        bat 'docker run -v %CD%\\newman:/app/newman test11031992/bookingapi:1.0'
                     }
                 
         }

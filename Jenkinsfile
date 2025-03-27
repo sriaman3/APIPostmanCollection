@@ -17,51 +17,27 @@ pipeline {
         
 
         stage('Pull Docker Images') {
-            parallel {
-                stage('Pull GoRest Image') {
-                    steps {
-                       bat 'docker pull test11031992/bookingapi:1.0'
-                    }
-                }
                 stage('Pull Booking Image') {
                     steps {
                         bat 'docker pull test11031992/bookingapi:1.0'
                     }
                 }
-            }
+            
         }
 
 
         stage('Run API Test Cases in Parallel') {
-            parallel {
-                stage('Run GoRest Tests') {
-                    steps {
-                         bat 'docker run --rm -v "%cd%\\newman:/app/results" test11031992/bookingapi:1.0'
-                    }
-                }
+              
                 stage('Run Booking Tests') {
                     steps {
                         bat 'docker run --rm -v "%cd%\\newman:/app/results" test11031992/bookingapi:1.0'
                     }
-                }
+                
             }
         }
 
         stage('Publish HTML Extra Reports') {
-            parallel {
-                stage('Publish GoRest Report') {
-                    steps {
-                        publishHTML([
-                            allowMissing: false,
-                            alwaysLinkToLastBuild: false,
-                            keepAll: true,
-                            reportDir: 'newman',
-                            reportFiles: 'booking.html',
-                            reportName: 'GoRest API Report',
-                            reportTitles: ''
-                        ])
-                    }
-                }
+           
                 stage('Publish Booking Report') {
                     steps {
                         publishHTML([
@@ -76,7 +52,7 @@ pipeline {
                     }
                 }
             }
-        }
+        
 
         stage("Deploy to PROD") {
             steps {

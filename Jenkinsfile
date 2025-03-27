@@ -40,7 +40,7 @@ pipeline {
                             allowMissing: false,
                             alwaysLinkToLastBuild: false,
                             keepAll: true,
-                            reportDir: 'newman/',
+                            reportDir: 'newman',
                             reportFiles: 'booking.html',
                             reportName: 'Booking API Report',
                             reportTitles: ''

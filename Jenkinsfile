@@ -44,7 +44,6 @@ pipeline {
                             reportFiles: 'booking.html',
                             reportName: 'Booking API Report',
                             reportTitles: '',
-                            useWrapperFileDirectly: true
                         ])
                     }
                 

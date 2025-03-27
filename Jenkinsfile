@@ -31,16 +31,6 @@ pipeline {
             }
         }
 
-        stage('Prepare Newman Results Directory') {
-            steps {
-                bat '''
-                    if exist "%cd%\\newman" (
-                    rmdir /s /q "%cd%\\newman"
-                    )
-                    mkdir "%cd%\\newman"
-                    '''
-            }
-        }
 
         stage('Run API Test Cases in Parallel') {
             parallel {
@@ -66,7 +56,7 @@ pipeline {
                             alwaysLinkToLastBuild: false,
                             keepAll: true,
                             reportDir: 'newman',
-                            reportFiles: 'gorest.html',
+                            reportFiles: 'booking.html',
                             reportName: 'GoRest API Report',
                             reportTitles: ''
                         ])

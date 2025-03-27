@@ -43,7 +43,8 @@ pipeline {
                             reportDir: 'newman',
                             reportFiles: 'booking.html',
                             reportName: 'Booking API Report',
-                            reportTitles: ''
+                            reportTitles: '',
+                            useWrapperFileDirectly: true
                         ])
                     }
                 
